@@ -12,6 +12,8 @@ docker build -t modalaigh/sratoolkit:latest .
 
 Before running the container, please make sure that the directory that the container will be run from has an empty folder named `data/` and a file named `SRR_Acc_List.txt` with SRA Accession . To run the image in Docker or Singularity, follow the instructions below:
 
+Note: to ensure all accession names are read, be sure that `SRR_Acc_List.txt` ends on a new line
+
 ### Docker
 Run the following command in the same directory as `SRR_Acc_List.txt`
 
@@ -22,5 +24,5 @@ docker run --rm -v $PWD:/mnt modalaigh/sratoolkit:latest
 
 ### Singularity
 ```
-Singularity run --bind $PWD:/mnt docker://modalaigh/sratoolkit:latest
+singularity run --bind $PWD:/mnt docker://modalaigh/sratoolkit:latest
 ```
